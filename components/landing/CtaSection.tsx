@@ -10,8 +10,11 @@ export function CtaSection() {
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
           Ready to practice law again?
         </h2>
-        <p className="text-lg text-foreground/60 mb-12 max-w-2xl mx-auto">
-          Join lawyers across Kenya who've reclaimed their practice hours.
+        <p className="text-lg text-foreground/60 mb-4 max-w-2xl mx-auto">
+          Join firms across Kenya who've reclaimed billable hours. No spreadsheets. No chaos.
+        </p>
+        <p className="text-sm text-foreground/45 mb-12 max-w-xl mx-auto">
+          Built for the way you work. Your time is billable&mdash;your software shouldn&rsquo;t waste it.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">

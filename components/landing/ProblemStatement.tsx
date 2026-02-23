@@ -237,8 +237,8 @@ export function ProblemStatement() {
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </Link>
-          <p className="text-sm text-foreground/40">
-            Early access for Kenyan law firms
+          <p className="text-sm text-foreground/50">
+            Early access for Kenyan law firms — built for practice, not paperwork
           </p>
         </div>
       </div>

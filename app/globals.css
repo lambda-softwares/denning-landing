@@ -75,8 +75,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-sans-app), 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-app), 'Fraunces', ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -120,7 +121,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), var(--font-sans);
   }
 }
 

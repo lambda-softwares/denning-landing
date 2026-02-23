@@ -24,7 +24,7 @@ export function HeroSection() {
             project management.
           </h1>
           <p className="text-xl text-foreground/60 text-balance max-w-2xl mx-auto leading-relaxed">
-            Denning AI handles deadlines, documents, diary, and delegation&mdash;so every matter stays on track without the overhead.
+            Deadlines, documents, diary, delegation&mdash;all in one place. Built for Kenyan practice. So you bill hours, not chase paperwork.
           </p>
 
           {/* CTA Buttons */}
@@ -39,8 +39,11 @@ export function HeroSection() {
           </div>
 
           {/* Social Proof Line */}
-          <p className="text-sm text-foreground/40 pt-4">
-            Trusted by law firms across Kenya
+          <p className="text-sm text-foreground/50 pt-6">
+            Trusted by practicing lawyers across Kenya
+          </p>
+          <p className="text-xs text-foreground/35 pt-1">
+            Data Protection Act compliant • Built for the way you practice
           </p>
         </div>
 

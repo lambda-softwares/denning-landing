@@ -1,10 +1,17 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Plus_Jakarta_Sans, Fraunces } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-sans-app',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-display-app',
+});
 
 export const metadata: Metadata = {
   title: 'Denning - Practice Law, Not Project Management',
@@ -35,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${plusJakarta.variable} ${fraunces.variable}`}>
       <body className="font-sans antialiased">
         {children}
         <Analytics />

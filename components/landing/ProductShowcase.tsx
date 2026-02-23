@@ -12,7 +12,7 @@ export function ProductShowcase() {
             Everything connects back to the file.
           </h2>
           <p className="text-lg text-foreground/60 leading-relaxed">
-            Denning keeps the file at the center of everything. Upload a document&mdash;AI extracts the details. Add a task&mdash;it's linked to the matter. Schedule a hearing&mdash;your whole team sees it. No more scattered spreadsheets. No more chasing updates.
+            Denning keeps the file at the center of everything. Upload a document&mdash;AI extracts the details. Add a task&mdash;it&rsquo;s linked to the matter. Schedule a hearing&mdash;your whole team sees it. Built for practice. No spreadsheets. No chaos.
           </p>
         </div>
 
