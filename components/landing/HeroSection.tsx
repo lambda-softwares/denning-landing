@@ -1,7 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { APP_URL } from '@/lib/constants';
 import { screenshots } from '@/lib/screenshots';
 
 export function HeroSection() {
@@ -29,9 +31,11 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
-            <Button size="lg" className="bg-foreground text-background font-medium px-8">
-              Get Started
-              <ArrowRight className="w-4 h-4 ml-2" />
+            <Button asChild size="lg" className="bg-foreground text-background font-medium px-8">
+              <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+                Get Started
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-foreground/30 text-foreground hover:bg-transparent hover:text-foreground">
               Book a Demo

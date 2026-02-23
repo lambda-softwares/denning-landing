@@ -1,7 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { APP_URL } from '@/lib/constants';
 
 export function PricingSection() {
   const pricingPlans = [
@@ -99,17 +101,34 @@ export function PricingSection() {
                 <h3 className="text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
                 <p className="text-foreground/60 text-sm mb-6 flex-grow">{plan.description}</p>
 
-                <Button
-                  className={`w-full mb-8 font-medium ${
-                    plan.highlighted
-                      ? 'bg-foreground text-background'
-                      : 'border border-foreground/20 text-foreground'
-                  }`}
-                  variant={plan.highlighted ? 'default' : 'outline'}
-                  size="lg"
-                >
-                  {plan.cta}
-                </Button>
+                {plan.cta === 'Get Started' ? (
+                  <Button
+                    asChild
+                    className={`w-full mb-8 font-medium ${
+                      plan.highlighted
+                        ? 'bg-foreground text-background'
+                        : 'border border-foreground/20 text-foreground'
+                    }`}
+                    variant={plan.highlighted ? 'default' : 'outline'}
+                    size="lg"
+                  >
+                    <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+                      {plan.cta}
+                    </Link>
+                  </Button>
+                ) : (
+                  <Button
+                    className={`w-full mb-8 font-medium ${
+                      plan.highlighted
+                        ? 'bg-foreground text-background'
+                        : 'border border-foreground/20 text-foreground'
+                    }`}
+                    variant={plan.highlighted ? 'default' : 'outline'}
+                    size="lg"
+                  >
+                    {plan.cta}
+                  </Button>
+                )}
 
                 {/* Features */}
                 <div className="space-y-3 border-t border-border pt-6">

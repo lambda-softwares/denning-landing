@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { APP_URL } from '@/lib/constants';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,8 +47,10 @@ export function Navigation() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button className="bg-foreground text-background text-sm font-semibold px-4 hover:opacity-90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 rounded-xl">
-              Get Started
+            <Button asChild className="bg-foreground text-background text-sm font-semibold px-4 hover:opacity-90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 rounded-xl">
+              <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+                Get Started
+              </Link>
             </Button>
           </div>
 
@@ -76,8 +79,10 @@ export function Navigation() {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-4">
-                <Button className="w-full bg-foreground text-background text-sm font-semibold hover:opacity-90 active:scale-[0.98] transition-all duration-200 rounded-xl">
-                  Get Started
+                <Button asChild className="w-full bg-foreground text-background text-sm font-semibold hover:opacity-90 active:scale-[0.98] transition-all duration-200 rounded-xl">
+                  <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+                    Get Started
+                  </Link>
                 </Button>
               </div>
             </div>

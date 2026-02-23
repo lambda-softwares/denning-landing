@@ -1,7 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { APP_URL } from '@/lib/constants';
 
 export function CtaSection() {
   return (
@@ -18,12 +20,11 @@ export function CtaSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Button
-            size="lg"
-            className="bg-foreground text-background font-medium px-8"
-          >
-            Get Started
-            <ArrowRight className="w-4 h-4 ml-2" />
+          <Button asChild size="lg" className="bg-foreground text-background font-medium px-8">
+            <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
+              Get Started
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
           </Button>
           <Button
             size="lg"
