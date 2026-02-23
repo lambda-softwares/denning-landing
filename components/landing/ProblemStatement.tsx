@@ -163,60 +163,63 @@ export function ProblemStatement() {
           </svg>
         </div>
 
-        {/* Mobile layout -- clean vertical list with connecting line */}
-        <div className="md:hidden relative max-w-xs mx-auto">
-          {/* Center file */}
+        {/* Mobile layout -- refined vertical flow with hub-spoke connection */}
+        <div
+          className="md:hidden max-w-sm mx-auto relative"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transition: 'opacity 0.5s ease 150ms',
+          }}
+        >
+          {/* Connector line: from below NEW FILE hub down through all cards */}
           <div
-            className="flex justify-center mb-8"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transition: 'opacity 0.5s ease',
-            }}
-          >
-            <div className="w-20 h-20 rounded-2xl bg-foreground flex items-center justify-center shadow-lg">
+            className="absolute left-1/2 top-20 -translate-x-px bottom-0 w-px bg-gradient-to-b from-foreground/20 to-border"
+            aria-hidden
+          />
+
+          {/* NEW FILE hub (round/circular) */}
+          <div className="flex justify-center mb-6">
+            <div className="w-20 h-20 rounded-full bg-foreground flex items-center justify-center shadow-lg ring-2 ring-foreground/5 shrink-0">
               <div className="text-center">
-                <FileText className="w-6 h-6 text-background mx-auto mb-0.5" />
-                <span className="text-[9px] font-bold text-background/80 uppercase tracking-wider">
+                <FileText className="w-6 h-6 text-background mx-auto mb-0.5" strokeWidth={2} />
+                <span className="text-[9px] font-semibold text-background/90 uppercase tracking-widest">
                   New File
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Vertical connector */}
-          <div className="absolute left-1/2 top-24 bottom-0 w-px bg-foreground/[0.06] -translate-x-1/2" />
-
-          {/* Demand items */}
-          <div className="relative flex flex-col gap-4">
+          {/* Cards connected via center line */}
+          <div className="flex flex-col gap-3 -mt-2">
             {demands.map((demand, idx) => {
               const Icon = demand.icon;
               return (
                 <div
                   key={idx}
-                  className="relative flex items-center gap-4 pl-4"
+                  className="relative flex flex-col items-center"
                   style={{
                     opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-                    transition: `opacity 0.4s ease ${300 + idx * 80}ms, transform 0.4s ease ${300 + idx * 80}ms`,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(-6px)',
+                    transition: `opacity 0.4s ease ${250 + idx * 60}ms, transform 0.4s ease ${250 + idx * 60}ms`,
                   }}
                 >
-                  {/* Dot on the connector line */}
-                  <div className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-foreground/15" style={{ left: '50%' }} />
-
-                  <div className="flex items-center gap-3 w-full rounded-xl border border-border bg-background p-3.5 shadow-sm mx-auto">
-                    <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center shrink-0">
-                      <Icon className="w-4 h-4 text-foreground/50" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground/70">{demand.label}</p>
-                      <p className="text-[11px] text-foreground/35">{demand.detail}</p>
+                  <div className="absolute left-1/2 top-0 w-2.5 h-2.5 rounded-full bg-foreground/30 border-2 border-background -translate-x-1/2 -translate-y-1/2 z-10" />
+                  <div className="flex-1 w-full rounded-xl bg-background border border-border/80 p-4 shadow-sm mt-1">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-muted/80 flex items-center justify-center shrink-0">
+                          <Icon className="w-5 h-5 text-foreground/60" strokeWidth={1.5} />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold text-foreground">{demand.label}</p>
+                          <p className="text-xs text-foreground/50 mt-0.5 leading-snug">{demand.detail}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
 
         {/* Beta CTA */}
         <div
