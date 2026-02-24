@@ -13,6 +13,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { APP_URL } from '@/lib/constants';
 
 const demands = [
   { icon: ClipboardList, label: 'Procedures', detail: 'Court rules, compliance, filings' },
@@ -22,8 +23,6 @@ const demands = [
   { icon: Search, label: 'Research', detail: 'Case law, statutes, opinions' },
   { icon: Scale, label: 'Appearances', detail: 'Mentions, hearings, trials' },
 ];
-
-const BETA_URL = '#cta';
 
 export function ProblemStatement() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -230,7 +229,7 @@ export function ProblemStatement() {
             transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 400ms, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 400ms',
           }}
         >
-          <Link href={BETA_URL}>
+          <Link href={APP_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="group bg-foreground text-background font-semibold px-8 py-6 text-base hover:opacity-90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 rounded-xl"
