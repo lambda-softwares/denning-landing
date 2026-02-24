@@ -27,7 +27,7 @@ export function Navigation() {
               width={160}
               height={40}
               className="h-9 w-auto"
-              priority
+              priority={true}
             />
             <span className="text-[8px] font-semibold uppercase tracking-wider bg-foreground text-background px-2.5 py-1 rounded-full align-middle leading-none">Beta</span>
           </Link>
