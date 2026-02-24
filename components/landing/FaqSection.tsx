@@ -17,7 +17,7 @@ export function FaqSection() {
     },
     {
       question: 'How long does it take to set up?',
-      answer: 'Setup takes about 30 minutes. Our onboarding team will guide you through the process, and we can import your existing case data securely. Most firms are fully operational within a day.',
+      answer: 'About 5 minutes. Sign up, invite your team members, and you\'re ready to go. No lengthy onboarding—just create your account and start adding matters.',
     },
     {
       question: 'Can my whole team use Denning?',

@@ -16,21 +16,11 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: 'Denning - Practice Law, Not Project Management',
   description: 'Denning AI handles deadlines, documents, diary, and delegation for Kenyan law firms - so every matter stays on track without the overhead.',
-  generator: 'v0.app',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/favicon-16.png', sizes: '16x16' },
+      { url: '/favicon-32.png', sizes: '32x32' },
+      { url: '/favicon-192.png', sizes: '192x192' },
     ],
     apple: '/apple-icon.png',
   },

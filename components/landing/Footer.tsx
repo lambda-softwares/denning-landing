@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,10 +32,14 @@ export function Footer() {
           {/* Logo */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-bold text-lg mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent/60 rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground text-sm font-bold">D</span>
-              </div>
-              <span className="text-foreground">Denning</span>
+              <Image
+                src="/denning-logo.png"
+                alt="Denning"
+                width={160}
+                height={40}
+                className="h-9 w-auto"
+              />
+              <span className="text-[8px] font-semibold uppercase tracking-wider bg-foreground text-background px-2.5 py-1 rounded-full align-middle leading-none">Beta</span>
             </Link>
             <p className="text-sm text-foreground/60">
               Practice law, not project management.
